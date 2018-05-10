@@ -44,34 +44,7 @@ namespace BmiWpfDemo
 
 
                 // 計算 BMI
-                double bmi = WeightSlider.Value / Math.Pow(HeightSlider.Value / 100, 2);
-
-                // 用小數點當區隔拆開
-                string[] parts = Math.Round(bmi, 1).ToString().Split('.');
-
-                // 顯示 BMI
-                BmiNumber1.Text = parts[0];
-                if (parts.Length > 1)
-                {
-                    BmiNumber2.Text = '.' + parts[1];
-                }
-
-                // 變更文字
-                if (bmi < 18.5)
-                {
-                    ResultText.Text = "Your are too thin, Put on some weight!";
-                    ResultText.Foreground = Brushes.Red;
-                }
-                else if (bmi >= 18.5 && bmi < 24)
-                {
-                    ResultText.Text = "You have a normal body weight. Great Job!";
-                    ResultText.Foreground = Brushes.LimeGreen;
-                }
-                else
-                {
-                    ResultText.Text = "Your are too fat!, Try to lose weight now!";
-                    ResultText.Foreground = Brushes.Red;
-                }
+                BMIchange();
             }
         }
 
@@ -94,34 +67,7 @@ namespace BmiWpfDemo
 
 
                 // 計算 BMI
-                double bmi = WeightSlider.Value / Math.Pow(HeightSlider.Value / 100, 2);
-
-                // 用小數點當區隔拆開
-                string[] parts = Math.Round(bmi, 1).ToString().Split('.');
-
-                // 顯示 BMI
-                BmiNumber1.Text = parts[0];
-                if (parts.Length > 1)
-                {
-                    BmiNumber2.Text = '.' + parts[1];
-                }
-
-                // 變更文字
-                if (bmi < 18.5)
-                {
-                    ResultText.Text = "Your are too thin, Put on some weight!";
-                    ResultText.Foreground = Brushes.Red;
-                }
-                else if (bmi >= 18.5 && bmi < 24)
-                {
-                    ResultText.Text = "You have a normal body weight. Great Job!";
-                    ResultText.Foreground = Brushes.LimeGreen;
-                }
-                else
-                {
-                    ResultText.Text = "Your are too fat!, Try to lose weight now!";
-                    ResultText.Foreground = Brushes.Red;
-                }
+                BMIchange();
             }
         }
 
@@ -144,6 +90,38 @@ namespace BmiWpfDemo
         {
             HeightSlider.Value = HeightSlider.Minimum;
             WeightSlider.Value = WeightSlider.Minimum;
+        }
+        void BMIchange()
+        {
+            // 計算 BMI
+            double bmi = WeightSlider.Value / Math.Pow(HeightSlider.Value / 100, 2);
+
+            // 用小數點當區隔拆開
+            string[] parts = Math.Round(bmi, 1).ToString().Split('.');
+
+            // 顯示 BMI
+            BmiNumber1.Text = parts[0];
+            if (parts.Length > 1)
+            {
+                BmiNumber2.Text = '.' + parts[1];
+            }
+
+            // 變更文字
+            if (bmi < 18.5)
+            {
+                ResultText.Text = "Your are too thin, Put on some weight!";
+                ResultText.Foreground = Brushes.Red;
+            }
+            else if (bmi >= 18.5 && bmi < 24)
+            {
+                ResultText.Text = "You have a normal body weight. Great Job!";
+                ResultText.Foreground = Brushes.LimeGreen;
+            }
+            else
+            {
+                ResultText.Text = "Your are too fat!, Try to lose weight now!";
+                ResultText.Foreground = Brushes.Red;
+            }
         }
     }
 }

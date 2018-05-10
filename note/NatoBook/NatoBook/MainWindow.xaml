@@ -1,0 +1,24 @@
+﻿<Window x:Class="NatoBook.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NatoBook"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <!--check-->
+            <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="200"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <!--fill-->
+            <Rectangle Grid.Column="1" Fill="Black"></Rectangle>
+        <StackPanel Grid.Column="1">
+            <Button x:Name="OpenButton" Margin="20 10" Foreground="White" Background="Black" Click="OpenButton_Click"  >Open</Button>
+            <Button x:Name="SaveButton" Margin="20 10" Foreground="White" Background="Black" Click="SaveButton_Click">Save</Button>
+        </StackPanel>
+        <!--left-->
+        <TextBox AcceptsReturn="False" TextWrapping="Wrap" x:Name="TextArea"></TextBox>
+    </Grid>
+</Window>

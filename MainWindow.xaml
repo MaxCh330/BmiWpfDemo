@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BmiWpfDemo"
         mc:Ignorable="d"
-        Title="MainWindow" Height="570" Width="400" ResizeMode="NoResize" 
+        Title="MainWindow" Height="570" Width="355.336" ResizeMode="NoResize" 
         AllowsTransparency="True" WindowStyle="None" Background="Transparent" BorderThickness="0">
 
     <Grid Width="350" Height="520" x:Name="BaseGrid" MouseLeftButtonDown="BaseGrid_MouseLeftButtonDown">
